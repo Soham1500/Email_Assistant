@@ -1,0 +1,213 @@
+/*==================================
+  EMAIL ASSISTANT POPUP STYLES
+==================================*/
+
+/* Overlay for the popup */
+.email-assistant-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Main popup content box */
+.popup-content {
+  background: linear-gradient(135deg, #1f1f3f, #522b85);
+  color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Title for the popup */
+.popup-content h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  text-align: center;
+  background: linear-gradient(90deg, #fff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Styling for labels and textarea placeholders */
+.email-type-selector label,
+.popup-content textarea::placeholder {
+  color: #e0e0ff;
+}
+
+/* Container for the dropdown selector */
+.email-type-selector {
+  margin-bottom: 20px;
+}
+
+/* Label for the dropdown */
+.email-type-selector label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* General styling for form inputs */
+.email-type-selector select,
+.popup-content textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+/* Custom dropdown arrow for the select element */
+.email-type-selector select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg fill='white' viewBox='0 0 24 24'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+}
+
+/* Focus state for inputs */
+.email-type-selector select:focus,
+.popup-content textarea:focus {
+  outline: none;
+  border-color: #9333ea;
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.3);
+}
+
+/* Disabled state for select */
+.email-type-selector select:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Textarea styling */
+.popup-content textarea {
+  resize: vertical;
+  min-height: 150px;
+  margin-bottom: 20px;
+}
+
+/* Button container for the popup actions */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Styling for the AI response section */
+.ai-response {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 4px solid #9333ea;
+  border-radius: 8px;
+}
+
+/* Content within the AI response box */
+.response-content {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+/* Styling for error and success messages */
+.error-message,
+.success-message {
+  text-align: center;
+  font-weight: 500;
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.error-message {
+  color: #ff6b6b;
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.success-message {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+}
+
+/* Close button for the popup */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  background: none;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close-button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+/* Spinner animation for loading states */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+/*==================================
+  RESPONSIVE STYLES
+==================================*/
+@media (max-width: 768px) {
+  .popup-content {
+    padding: 20px;
+  }
+
+  .popup-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-content {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .email-type-selector select {
+    padding: 10px 14px;
+  }
+}

@@ -1,0 +1,123 @@
+/* ========== CONTACT SECTION ========== */
+.contact-wrapper {
+  background: linear-gradient(to right, #2a0845, #6441a5);
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.contact-heading {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contact-subheading {
+  font-size: 18px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========== FORM ROWS ========== */
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-row input {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ========== INPUTS & TEXTAREAS ========== */
+input,
+textarea {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus,
+textarea:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* ========== BUTTON ========== */
+button {
+  background: linear-gradient(to right, #5f72ff, #9b50ff);
+  color: #fff;
+  font-size: 18px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(to right, #715aff, #aa64ff);
+}
+
+/* ========== MESSAGES ========== */
+.success-message,
+.error-message {
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.success-message {
+  color: #90ee90;
+}
+
+.error-message {
+  color: #ff7070;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  .contact-heading {
+    font-size: 28px;
+  }
+
+  .contact-subheading {
+    font-size: 16px;
+  }
+}
